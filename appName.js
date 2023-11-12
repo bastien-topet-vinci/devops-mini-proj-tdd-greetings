@@ -8,10 +8,7 @@ module.exports.greet = (name) => {
   if (this.isUndefined(name)){
     return 'Hello, my friend'
   }
-  if(name.length === 2){
-    return ("Hello, "+ name[0] + " and " + name[1] + ".");
-  }
-  if(name.length > 2 && typeof name === "object"){
+  if(name.length >= 2 && typeof name === "object"){
     let greetNames = "Hello";
     for(let index = 0; index < name.length; ++index) {
       if(index === name.length-1){
