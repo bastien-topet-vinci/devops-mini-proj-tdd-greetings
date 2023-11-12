@@ -1,7 +1,7 @@
 const { greet } = require('../appName.js')
 
 test('greet function should return Hello, Bob', () => {
-    expect(greet('Bob')).toBe('Hello, Bob')
+    expect(greet('Jean-Kevin')).toBe('Hello, Jean-Kevin')
 })
 
 test('greet function should return Hello, my friend', () => {
@@ -17,5 +17,5 @@ test('greet function should return Hello, my friend', () => {
 })
 
 test('greet function should return HELLO, JERRY', () => {
-    expect(greet('JERRY')).toBe('HELLO, JERRY')
+    expect(greet('KENNOBI')).toBe('HELLO, KENNOBI')
 })
