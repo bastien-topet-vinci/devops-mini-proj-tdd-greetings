@@ -8,7 +8,10 @@ module.exports.greet = (name) => {
   if (this.isUndefined(name)){
     return 'Hello, my friend'
   }
-  return 'Hello, ' + name
+  if(name.length === 2){
+    return ("Hello, "+ name[0] + " and " + name[1] + ".");
+  }
+  return ("Hello "+ name);
 }
 module.exports.isEmpty = (name1) => {
   if (name1 === '') {
