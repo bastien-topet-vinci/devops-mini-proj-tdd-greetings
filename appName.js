@@ -5,7 +5,7 @@ module.exports.greet = (name) => {
   if (this.isNull(name)) {
     return 'Hello, my friend'
   }
-  if (name === undefined){
+  if (this.isUndefined(name)){
     return 'Hello, my friend'
   }
   return 'Hello, ' + name
@@ -21,4 +21,10 @@ module.exports.isNull = (name2) => {
     return true
   }
   return false
+}
+module.exports.isUndefined = (name3) => {
+  if (name3 === undefined){
+    return true;
+  }
+  return false;
 }
