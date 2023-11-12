@@ -1,3 +1,6 @@
 module.exports.greet = (name) => {
-  return ("Hello "+ name);
-};
+    if (name === '') {
+        return 'Hello, my friend'
+    }
+    return 'Hello, ' + name
+}
