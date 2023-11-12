@@ -9,58 +9,19 @@ module.exports.greet = (name) => {
         return 'Hello, my friend'
     }
     if (this.greetMoreNames(name)){
-      let number = name.length-1;
-      if (name[number] === 'fr'){
-        let greetNames = "Bonjour";
-        
-      for(let index = 0; index < name.length-1; ++index) {
-        if (name.length < 3){
-          greetNames = greetNames + " " + name[index] + ".";
-          break;
-        }
-        if(index === name.length-2){
-          greetNames = greetNames + " et " + name[index] + ".";
-        }
-        else{
-          greetNames = greetNames + ", " + name[index];
-        }
+      if (this.isFr(name)){
+        return this.translationFr(name);
       }
-      return greetNames;
-      }
-      if (name[number] === 'nl'){
-        let greetNames = "Hallo";
-      for(let index = 0; index < name.length-1; ++index) {
-        if (name.length < 3){
-          greetNames = greetNames + " " + name[index] + ".";
-          break;
-        }
-        if(index === name.length-2){
-          greetNames = greetNames + " en " + name[index] + ".";
-        }
-        else{
-          greetNames = greetNames + ", " + name[index];
-        }
-      }
-      return greetNames;
+      if (this.isNl(name)){
+        return this.translationNl(name);
       }
     }
-
     if (this.onlyUppercaseLetters(name)) {
         return 'HELLO, ' + name
     }
     if(this.greetMoreNames(name)) {
-      let greetNames = "Hello";
-      for(let index = 0; index < name.length; ++index) {
-        if(index === name.length-1){
-          greetNames = greetNames + " and " + name[index] + ".";
-        }
-        else{
-          greetNames = greetNames + ", " + name[index];
-        }
-      }
-      return greetNames;
+      return this.translationEng(name)
     }
-  
   return ("Hello, "+ name);
 }
 
@@ -96,3 +57,62 @@ module.exports.greetMoreNames = (name5) => {
   }
   return false;
 }
+module.exports.isFr = (name6) => {
+  let number = name6.length-1;
+      if (name6[number] === 'fr'){
+        return true;
+      }
+  return false;
+}
+module.exports.isNl = (name7) => {
+  let number = name7.length-1;
+      if (name7[number] === 'nl'){
+        return true;
+      }
+  return false;
+}
+module.exports.translationFr = (name8) => {
+  let greetNames = "Bonjour";
+        
+      for(let index = 0; index < name8.length-1; ++index) {
+        if (name8.length < 3){
+          greetNames = greetNames + " " + name8[index] + ".";
+          break;
+        }
+        if(index === name8.length-2){
+          greetNames = greetNames + " et " + name8[index] + ".";
+        }
+        else{
+          greetNames = greetNames + ", " + name8[index];
+        }
+      }
+      return greetNames;
+}
+module.exports.translationNl = (name9) => {
+  let greetNames = "Hallo";
+      for(let index = 0; index < name9.length-1; ++index) {
+        if (name9.length < 3){
+          greetNames = greetNames + " " + name9[index] + ".";
+          break;
+        }
+        if(index === name9.length-2){
+          greetNames = greetNames + " en " + name9[index] + ".";
+        }
+        else{
+          greetNames = greetNames + ", " + name9[index];
+        }
+      }
+      return greetNames;
+}
+module.exports.translationEng = (name10) => {
+      let greetNames = "Hello";
+      for(let index = 0; index < name10.length; ++index) {
+        if(index === name10.length-1){
+          greetNames = greetNames + " and " + name10[index] + ".";
+        }
+        else{
+          greetNames = greetNames + ", " + name10[index];
+        }
+      }
+      return greetNames;
+    }
