@@ -22,6 +22,39 @@ module.exports.greet = (name) => {
     if(this.greetMoreNames(name)) {
       return this.translationEng(name)
     }
+    if(this.greetMoreNames(name)) {
+      let greetNames = "Hello";
+      let capsNames = [];
+      let normalNames = [];
+      name.forEach(names => {
+        if(this.onlyUppercaseLetters(names)){
+          capsNames.push(names);
+          console.log(capsNames);
+        }
+        else{
+          normalNames.push(names);
+        }
+      });
+      for(let index = 0; index < normalNames.length; ++index) {
+        if(index === normalNames.length-1){
+          greetNames += " and " + normalNames[index] + ".";
+        }
+        else{
+          greetNames += ", " + normalNames[index];
+        }
+      }
+      for(let index = 0; index < capsNames.length; ++index) {
+        greetNames += " AND HELLO " + capsNames[index];
+      }
+      if(capsNames.length>=1){
+        greetNames += "!";
+      }
+      return greetNames;
+    }
+    if (this.onlyUppercaseLetters(name)) {
+      return 'HELLO, ' + name;
+  }
+  
   return ("Hello, "+ name);
 }
 
