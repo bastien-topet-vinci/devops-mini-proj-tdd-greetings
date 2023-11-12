@@ -1,3 +1,4 @@
+const regexp = /^[A-Z]+$/
 module.exports.greet = (name) => {
   if (this.isEmpty(name)) {
     return 'Hello, my friend'
@@ -7,6 +8,9 @@ module.exports.greet = (name) => {
   }
   if (this.isUndefined(name)){
     return 'Hello, my friend'
+  }
+  if (regexp.test(name)){
+  return 'HELLO, ' + name
   }
   return 'Hello, ' + name
 }
