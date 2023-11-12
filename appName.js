@@ -11,17 +11,6 @@ module.exports.greet = (name) => {
     if (this.onlyUppercaseLetters(name)) {
         return 'HELLO, ' + name
     }
-    if(name.length === 2){
-    return ("Hello, "+ name[0] + " and " + name[1] + ".");
-  if (this.isEmpty(name)) {
-    return 'Hello, my friend'
-  }
-  if (this.isNull(name)) {
-    return 'Hello, my friend'
-  }
-  if (this.isUndefined(name)){
-    return 'Hello, my friend'
-  }
   if(name.length >= 2 && typeof name === "object"){
     let greetNames = "Hello";
     for(let index = 0; index < name.length; ++index) {
