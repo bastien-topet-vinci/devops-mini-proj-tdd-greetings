@@ -8,21 +8,38 @@ module.exports.greet = (name) => {
     if (this.isUndefined(name)) {
         return 'Hello, my friend'
     }
-    if (this.onlyUppercaseLetters(name)) {
-        return 'HELLO, ' + name
-    }
     if(this.greetMoreNames(name)) {
       let greetNames = "Hello";
-      for(let index = 0; index < name.length; ++index) {
-        if(index === name.length-1){
-          greetNames = greetNames + " and " + name[index] + ".";
+      let capsNames = [];
+      let normalNames = [];
+      name.forEach(names => {
+        if(this.onlyUppercaseLetters(names)){
+          capsNames.push(names);
+          console.log(capsNames);
         }
         else{
-          greetNames = greetNames + ", " + name[index];
+          normalNames.push(names);
         }
+      });
+      for(let index = 0; index < normalNames.length; ++index) {
+        if(index === normalNames.length-1){
+          greetNames += " and " + normalNames[index] + ".";
+        }
+        else{
+          greetNames += ", " + normalNames[index];
+        }
+      }
+      for(let index = 0; index < capsNames.length; ++index) {
+        greetNames += " AND HELLO " + capsNames[index];
+      }
+      if(capsNames.length>=1){
+        greetNames += "!";
       }
       return greetNames;
     }
+    if (this.onlyUppercaseLetters(name)) {
+      return 'HELLO, ' + name;
+  }
   
   return ("Hello, "+ name);
 }
