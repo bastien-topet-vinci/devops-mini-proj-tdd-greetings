@@ -2,6 +2,6 @@ module.exports.greet = (name) => {
   return ("Hello "+ name);
 };
 
-module.exports.greetTwoNames = (name1,name2) => {
-  return ("Hello, "+ name1 + " and " + name2 + ".");
+module.exports.greetTwoNames = (table) => {
+  return ("Hello, "+ table[0] + " and " + table[1] + ".");
 };
