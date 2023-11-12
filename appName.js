@@ -11,7 +11,19 @@ module.exports.greet = (name) => {
   if(name.length === 2){
     return ("Hello, "+ name[0] + " and " + name[1] + ".");
   }
-  return ("Hello "+ name);
+  if(name.length > 2 && typeof name === "object"){
+    let greetNames = "Hello";
+    for(let index = 0; index < name.length; ++index) {
+      if(index === name.length-1){
+        greetNames = greetNames + " and " + name[index] + ".";
+      }
+      else{
+        greetNames = greetNames + ", " + name[index];
+      }
+    }
+    return greetNames;
+  }
+  return ("Hello, "+ name);
 }
 
 module.exports.isEmpty = (name1) => {
