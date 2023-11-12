@@ -13,6 +13,7 @@ module.exports.greet = (name) => {
   }
   return ("Hello "+ name);
 }
+
 module.exports.isEmpty = (name1) => {
   if (name1 === '') {
     return true
