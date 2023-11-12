@@ -1,6 +1,13 @@
 module.exports.greet = (name) => {
-    if (name === '') {
-        return 'Hello, my friend'
+    if (this.isEmpty(name)){
+      return 'Hello, my friend';
     }
-    return 'Hello, ' + name
+    return 'Hello, ' + name;
+    
+}
+module.exports.isEmpty = (name1) => {
+  if (name1 === '') {
+    return true;
+  }
+  return false;
 }
