@@ -5,6 +5,9 @@ module.exports.greet = (name) => {
   if (this.isNull(name)) {
     return 'Hello, my friend'
   }
+  if (name === undefined){
+    return 'Hello, my friend'
+  }
   return 'Hello, ' + name
 }
 module.exports.isEmpty = (name1) => {
