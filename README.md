@@ -2,5 +2,5 @@
 
 GROUPE 38
 
-Bastien Topet
+Bastien Topet,
 Anthony De Vreese
