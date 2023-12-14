@@ -6,7 +6,7 @@ on :
         types : [opened, edited]
 jobs : 
     check-code:
-        runs-on: ubuntu-latest
+        runs-on: ["${{ inputs.chosen-os}}-latest"]
         steps:
         - name: Checkout repository code
           uses: actions/checkout@v4
