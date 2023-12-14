@@ -5,17 +5,9 @@ on :
         branches: [ main ]
         types : [opened, edited]
 jobs : 
-    check-code:
-        runs-on: ["${{ inputs.chosen-os}}-latest"]
+    build:
+        runs-on: ubuntu-latest
         steps:
-        - name: Checkout repository code
-          uses: actions/checkout@v4
-
-        - name : Checkout Nodejs env
-          uses: actions/setup-node@v3
-          with:
-            node-version: '20.x'
-
         - name: Install all dependencies
           run: npm i
         
