@@ -23,16 +23,16 @@ jobs :
           run: echo "Starting time `date +%H:%M:%S`"
 
         - name: Run Prettier
-          run: npm prettier
+          run: npm run prettier
         
         - name: Run Eslint
-          run: npm lint  
+          run: npm run lint  
 
         - name: Run test coverage
-          run: npm test
+          run: npm run test
         
         - name: Build
-          run: npm build
+          run: npm run build
 
         - name: End time
           run: echo "End time `date +%H:%M:%S`"
