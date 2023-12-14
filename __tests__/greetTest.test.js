@@ -53,3 +53,4 @@ test('greet function should return Bonjour Kratos', () => {
   expect(greet(table3)).toBe('Bonjour Kratos.')
 })
 console.log("test pipeline");
+console.log("test pipeline2")
