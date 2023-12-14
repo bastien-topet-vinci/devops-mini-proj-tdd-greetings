@@ -17,5 +17,8 @@ jobs :
         
         - name: Starting time
           run: echo "Starting time" `date +%H:%M:%S`"
+        
+        - name: Build
+          run: npm build
 
 
