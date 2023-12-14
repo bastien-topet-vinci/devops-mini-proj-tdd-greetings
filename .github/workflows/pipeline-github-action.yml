@@ -8,7 +8,7 @@ jobs :
         runs-on: ["${{ inputs.chosen-os}}-latest"]
         steps:
         - name : Checkout Nodejs env
-          uses: npm install
+          uses: actions/setup-node@v3
           with:
             node-version: '20.x'
 
