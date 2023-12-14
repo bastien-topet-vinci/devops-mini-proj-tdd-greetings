@@ -2,11 +2,15 @@ name : Continuous Integratrion
 
 on :
     pull_request :
-        branches: main
+        branches: [ main ]
+        types : [opened, edited]
 jobs : 
     check-code:
-        runs-on: ubuntu-latest
+        runs-on: ["${{ inputs.chosen-os}}-latest"]
         steps:
+        - name: Checkout repository code
+          uses: actions/checkout@v4
+
         - name : Checkout Nodejs env
           uses: actions/setup-node@v3
           with:
@@ -16,15 +20,24 @@ jobs :
           run: npm i
         
         - name: Starting time
-          run: echo "Starting time" `date +%H:%M:%S`"
+          run: echo "Starting time `date +%H:%M:%S`"
 
         - name: Run Prettier
           run: npm prettier
         
         - name: Run Eslint
           run: npm lint  
+
+        - name: Run test coverage
+          run: npm test
         
         - name: Build
           run: npm build
+
+        - name: End time
+          run: echo "End time `date +%H:%M:%S`"
+
+        - name: Success
+          run: echo "PIPELINE SUCCESS WITHOUT ERRORS" 
 
 

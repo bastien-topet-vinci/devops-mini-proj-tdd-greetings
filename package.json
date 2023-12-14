@@ -10,7 +10,7 @@
         "lint": "eslint .",
         "lint:fix": "eslint --fix .",
         "commit": "cz",
-        "test": "jest",
+        "test": "jest --coverage",
         "build": "webpack ./appName.js --mode=development"
     },
     "author": "bt",
