@@ -17,6 +17,12 @@ jobs :
         
         - name: Starting time
           run: echo "Starting time" `date +%H:%M:%S`"
+
+        - name: Run Prettier
+          run: npm prettier
+        
+        - name: Run Eslint
+          run: npm lint  
         
         - name: Build
           run: npm build
