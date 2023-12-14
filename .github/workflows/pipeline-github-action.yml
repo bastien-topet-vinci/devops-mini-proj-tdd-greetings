@@ -5,7 +5,7 @@ on :
         branches: main
 jobs : 
     check-code:
-        runs-on: ["${{ inputs.chosen-os}}-latest"]
+        runs-on: ubuntu-latest
         steps:
         - name : Checkout Nodejs env
           uses: actions/setup-node@v3
