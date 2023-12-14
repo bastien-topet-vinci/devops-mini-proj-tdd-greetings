@@ -52,4 +52,3 @@ test('greet function should return Bonjour, Kratos et Thanatos.', () => {
 test('greet function should return Bonjour Kratos', () => {
   expect(greet(table3)).toBe('Bonjour Kratos.')
 })
-console.log("test pipeline");
