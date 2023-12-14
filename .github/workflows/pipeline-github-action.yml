@@ -1,1 +1,21 @@
 name : Continuous Integratrion
+
+on :
+    pull_request :
+        branches: main
+jobs : 
+    check-code:
+        runs-on: ["${{ inputs.chosen-os}}-latest"]
+        steps:
+        - name : Checkout Nodejs env
+          uses: npm install
+          with:
+            node-version: '20.x'
+
+        - name: Install all dependencies
+          run: npm i
+        
+        - name: Starting time
+          run: echo "Starting time" `date +%H:%M:%S`"
+
+
