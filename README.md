@@ -6,6 +6,7 @@ Travail de recherche , mettre en place de l'integration continue avec les GitHub
 - Membres du groupe : 
     - DE VREESE Anthony,
     - TOPET Bastien
+lien vers le repo : https://github.com/bastien-topet-vinci/devops-mini-proj-tdd-greetings
 
 ## Énoncé
 
