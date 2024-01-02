@@ -176,3 +176,4 @@ module.exports.translationEng = (name10) => {
   }
   return greetNames
 }
+console.log("test pipeline");
